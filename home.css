@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('images/Sephirothic\ Tree\ of\ Life\ -\ Edward\ Elric.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.header.hidden {
+    top: -100px;
+}
+
+.header-logo {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #4CAF50;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 100px 20px 40px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-header {
+    text-align: center;
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #388E3C;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 120px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+.content-inbox {
+    margin-top: 80px;
+    padding: 20px;
+}
+.inbox-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.chat-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chat-details {
+    flex-grow: 1;
+}
+.chat-details h4 {
+    margin: 0;
+    font-size: 16px;
+}
+.chat-details p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: gray;
+}
+.chat-time {
+    font-size: 12px;
+    color: gray;
