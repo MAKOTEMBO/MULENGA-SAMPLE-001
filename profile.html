@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHIFT SWAP</title>
+
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="home.css" />
+    <script src="scrp/script.js" defer></script>
+
+    <style>
+        :root {
+            --primary-blue: #4da6ff;
+            --light-blue-bg: #e6f2ff;
+            --dark-blue: #004080;
+            --white: #fff;
+            --gray: #f8f9fa;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 80px;
+            background-color: var(--light-blue-bg);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-blue);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            height: 80px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 16px;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-blue);
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border: none;
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-light:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-card {
+            margin-top: 100px;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .table th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .table-bordered {
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-danger {
+            background-color: #c82333;
+        }
+
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .card-body p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .header-logo {
+                width: 60px;
+            }
+
+            .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .profile-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="images/Kenny Mccormick South Park.jpg" alt="SHIFT SWAP" class="header-logo" />
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="inbox.html"><i class="fas fa-inbox"></i> Inbox</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-2">
+                    <a href="search.html" class="btn btn-primary w-100">View Available Shifts</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="shift.html" class="btn btn-success w-100">Swap your Shift</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="container mt-5">
+            <div class="profile-card shadow-lg rounded p-4 bg-white">
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="images/profile-avatar.jpg" alt="User Profile"
+                            class="profile-avatar rounded-circle mb-3" />
+                        <h4 class="mb-0">Dr. John Doe</h4>
+                        <p class="text-muted">Medical Specialist</p>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-3">Profile Information</h5>
+                        <div class="mb-2"><strong>Email:</strong> <span class="text-muted">john.doe@example.com</span>
+                        </div>
+                        <div class="mb-2"><strong>Phone:</strong> <span class="text-muted">+123 456 7890</span></div>
+                        <div class="mb-2"><strong>Location:</strong> <span class="text-muted">New York, USA</span></div>
+                        <div class="mb-3">
+                            <strong>Bio:</strong>
+                            <p class="text-muted">Experienced medical specialist with over 10 years in healthcare.
+                                Passionate about improving patient care and providing excellent medical services.</p>
+                        </div>
+                        <a href="mailto:john.doe@example.com" class="btn btn-primary"><i
+                                class="fas fa-edit me-2"></i>Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tinder Card and Reminder List -->
+        <div class="content container py-5">
+            <div class="row">
+                <!-- Tinder Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/doctor1.jpg" alt="profile ID" class="card-img-top" />
+                        <div class="card-body">
+                            <p class="mb-2">MY POST</p>
+                            <div class="d-flex flex-wrap justify-content-between text-muted small mb-2">
+                                <span>👁️ 235 Views</span>
+                                <span>🔄 12 Swap Requests</span>
+                                <span>❌ 7 Declines</span>
+                            </div>
+                            <h5 class="card-title mb-1">Dr. John Doe</h5>
+                            <p class="mb-1">Date: 04th May, 2025</p>
+                            <p class="mb-1">Available Shift: 8 AM - 4 PM</p>
+                            <p class="mb-1">Location: XYZ</p>
+                            <p class="mb-0">Offer Price: K150.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reminder List -->
+                <div class="col-md-6">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Title</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Doctor Appointment</td>
+                                <td>2025-05-10</td>
+                                <td>09:00</td>
+                                <td><button class="btn btn-danger btn-sm" onclick="deleteReminder(this)">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Meeting with Client</td>
+                                <td>2025-04-15</td>
+                                <td>14:00</td>
+                                <td><button class="btn btn-danger btn-sm" onclick="deleteReminder(this)">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Work Shift Swap</td>
+                                <td>2025-04-20</td>
+                                <td>11:00</td>
+                                <td><button class="btn btn-danger btn-sm" onclick="deleteReminder(this)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SHIFT SWAP. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function deleteReminder(button) {
+            const row = button.closest('tr');
+            row.remove();
+        }
+    </script>
+</body>
+
+</html>

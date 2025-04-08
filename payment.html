@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #4da6ff;
+            --light-blue-bg: #e6f2ff;
+            --dark-blue: #004080;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-blue-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-blue);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            height: 80px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .payment-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+        }
+
+        .footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .payment-options img {
+            width: 50px;
+            margin-right: 20px;
+        }
+
+        .payment-method select,
+        .payment-method input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .payment-method input:focus,
+        .payment-method select:focus {
+            border-color: var(--primary-blue);
+        }
+
+        @media (max-width: 768px) {
+            .payment-options img {
+                width: 40px;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="images/" alt="SHIFT SWAP" class="header-logo" />
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="inbox.html"><i class="fas fa-inbox"></i> Inbox</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-2">
+                    <a href="search.html" class="btn btn-primary w-100">View Available Shifts</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="shift.html" class="btn btn-success w-100">Swap your Shift</a>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <div class="payment-form">
+                    <h2 class="text-center text-primary">Payment for Service</h2>
+                    <p class="text-center">Please select a payment method and complete the transaction below:</p>
+
+                    <form>
+                        <!-- Payment Method Selection -->
+                        <div class="payment-method">
+                            <label for="payment-method">Select Payment Method:</label>
+                            <select id="payment-method" class="form-control">
+                                <option value="" disabled selected>Select Method</option>
+                                <option value="credit-card">Credit/Debit Card</option>
+                                <option value="mobile-money">Mobile Money</option>
+                                <option value="bank-transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+
+                        <!-- Credit/Debit Card Details -->
+                        <div id="credit-card-details" class="payment-method" style="display:none;">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="Enter Card Number">
+                            <label for="expiry-date">Expiry Date:</label>
+                            <input type="month" id="expiry-date" class="form-control">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" class="form-control" placeholder="Enter CVV">
+                        </div>
+
+                        <!-- Mobile Money Details -->
+                        <div id="mobile-money-details" class="payment-method" style="display:none;">
+                            <label for="mobile-number">Mobile Number:</label>
+                            <input type="tel" id="mobile-number" class="form-control" placeholder="Enter Mobile Number">
+                            <label for="mobile-provider">Mobile Provider:</label>
+                            <select id="mobile-provider" class="form-control">
+                                <option value="mtn">MTN</option>
+                                <option value="vodafone">Vodafone</option>
+                                <option value="airtel">Airtel</option>
+                            </select>
+                        </div>
+
+                        <!-- Bank Transfer Details -->
+                        <div id="bank-transfer-details" class="payment-method" style="display:none;">
+                            <label for="account-number">Account Number:</label>
+                            <input type="text" id="account-number" class="form-control"
+                                placeholder="Enter Bank Account Number">
+                            <label for="bank-name">Bank Name:</label>
+                            <input type="text" id="bank-name" class="form-control" placeholder="Enter Bank Name">
+                        </div>
+
+                        <!-- Payment Options -->
+                        <div class="payment-options">
+                            <h4>Select Payment Channel:</h4>
+                            <div class="d-flex justify-content-start">
+                                <img src="images/credit-card.png" alt="Credit Card">
+                                <img src="images/mobile-money.png" alt="Mobile Money">
+                                <img src="images/bank-transfer.png" alt="Bank Transfer">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary w-100 mt-4">Pay Now</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Shift Swap. All Rights Reserved.</p>
+        </footer>
+
+        <script>
+            // Toggle visibility of payment options based on method selection
+            document.getElementById('payment-method').addEventListener('change', function (event) {
+                var value = event.target.value;
+
+                // Hide all payment details
+                document.getElementById('credit-card-details').style.display = 'none';
+                document.getElementById('mobile-money-details').style.display = 'none';
+                document.getElementById('bank-transfer-details').style.display = 'none';
+
+                // Show selected payment method details
+                if (value === 'credit-card') {
+                    document.getElementById('credit-card-details').style.display = 'block';
+                } else if (value === 'mobile-money') {
+                    document.getElementById('mobile-money-details').style.display = 'block';
+                } else if (value === 'bank-transfer') {
+                    document.getElementById('bank-transfer-details').style.display = 'block';
+                }
+            });
+        </script>
+</body>
+
+</html>
